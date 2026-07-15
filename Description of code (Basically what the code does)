@@ -1,0 +1,35 @@
+Description of code: 
+
+The first breadboard represents toilet roll 1 and the bottom breadboard represents toilet roll 2.
+
+Assume distance from an empty roll surface to the ultrasonic sensor is 60cm and from a full roll surface to ultrasonic sensor is 30cm
+
+When both rolls are full, both green LEDS light up only
+
+So then the user starts using roll 1 first, Green LED on both rolls continues staying on.
+
+When the distance reaches 45cm for roll 1, its Green LED offs and its red LED lights up. No change for roll 2 yet.
+
+Finally when distance for roll 1 reaches 60cm, the servo motor turns 270 degrees and the Roll 1 LED stays red until a new roll is inserted (Ill talk abt how I want the code to be for when inserting new toilet rolls)
+
+So then now the second roll is in use and the Green LED still stays on
+
+When the distance reaches 45cm, its Green LED offs and its yellow LED turns on
+
+When the distance reaches 50cm, its Yellow LED offs and its Red LED turns on
+
+Finally when distance for roll 2 reaches 60cm, the servo motor turns back 270 degrees and the Roll 2 LED stays red until a new roll is inserted
+
+Insertion of new toilet paper roll:
+
+Assuming Roll 1 is replenished while roll 2 is still in use (and vice-versa):
+
+The motor does not turn back until the roll in use is finished (so until the distance = 60cm)
+
+Also based on the combination of these 2 LEDS, there will be an LED on the outer surface of the toilet door which shows updates about the toilet paper stock inside:
+
+First toilet paper roll + second toilet paper roll = outer LED
+R + R = R
+R + G = R
+Y + G = R
+G + G = G
